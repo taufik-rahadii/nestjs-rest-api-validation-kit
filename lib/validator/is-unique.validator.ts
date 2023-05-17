@@ -33,7 +33,7 @@ export class IsUniqueConstraints implements ValidatorConstraintInterface {
         [key]: value,
       });
 
-      return isExists.length < 0;
+      return isExists < 0;
     } catch (error) {
       return false;
     }
