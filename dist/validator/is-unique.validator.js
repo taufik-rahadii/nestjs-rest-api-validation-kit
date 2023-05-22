@@ -37,7 +37,7 @@ let IsUniqueConstraints = class IsUniqueConstraints {
                 const isExists = yield repo.countBy({
                     [key]: value,
                 });
-                return isExists.length < 0;
+                return isExists === 0;
             }
             catch (error) {
                 return false;
