@@ -28,6 +28,8 @@ export function IsUnique(
 export class IsUniqueConstraints implements ValidatorConstraintInterface {
   async validate(value: any, args: ValidationArguments) {
     try {
+      if (value.length > 0) return true
+      
       const [key, repo] = args.constraints;
       const isExists = await repo.countBy({
         [key]: value,
