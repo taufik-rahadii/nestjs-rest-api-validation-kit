@@ -33,7 +33,7 @@ let IsUniqueConstraints = class IsUniqueConstraints {
     validate(value, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                if (value.length > 0)
+                if (value.length === 0)
                     return true;
                 const [key, repo] = args.constraints;
                 const isExists = yield repo.countBy({
